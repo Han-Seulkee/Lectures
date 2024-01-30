@@ -1,5 +1,7 @@
-# Today I Learned
-Record what I learned each day
+# Online Lectures
+Notes
+
+Assignment & Project
 
 ## NOMADCODERS
   * [nomad-bookclub](https://github.com/Han-Seulkee/TIL/tree/main/book_club/)
