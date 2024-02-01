@@ -7,7 +7,7 @@
 * public folder: static 보관함
 
 
-## JSX
+## JSX (Javascript Syntax eXtention)
 #### 1. class 태그 주고싶다면?
 ```javascript
     class (x) 예약어
