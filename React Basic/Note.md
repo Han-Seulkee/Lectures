@@ -15,8 +15,12 @@
 ```
 #### 2. onClick
 ```javascript
-    <div onclick=" 함수 "> 기존js </div>
-    <div onClick={ 함수 }> react </div>
+    <div onclick=" 함수명 "> 기존js </div>
+    <div onClick={ 함수명 }> react </div>
+
+    !onclick이벤트에서 함수를 적을 때 소괄호 빼기!
+    함수명() ==> 바로실행
+    함수명 ==> 클릭 시 실행
 ```
 
 ### React 기본 사용
