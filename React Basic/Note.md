@@ -6,7 +6,18 @@
 
 * public folder: static 보관함
 
-### JSX (Javascript Syntax eXtention)
+## Why React?
+#### 선언형 뷰
+* 상호작용이 활발한 UI에서 효율적인 데이터 바인딩이 가능
+* 코드 예측, 디버그 수월
+#### 컴포넌트
+* 캡슐화한 요소들을 조합하여 복잡하고 다양한 UI만들기
+#### 확장성
+* 기존 코드를 다시 작성할 필요없이 React의 새로운 기능 사용
+* Node 서버에서 렌더링 가능
+* React Native로 모바일 앱 개발
+
+## JSX (Javascript Syntax eXtention)
 #### 1. class 태그 주고싶다면?
 ```javascript
     class (x) 예약어
@@ -23,7 +34,7 @@
     함수명 ==> 클릭 시 실행
 ```
 
-### React 기본 사용
+## React 기본 사용
 #### 1. 왜 App.js에 작성하는 걸까?
 리액트의 장점. 데이터 바인딩이 쉬워진다 (react == angular == vue)
 
@@ -53,11 +64,14 @@
 >   ```
 index.html에 보여질 html코드를 app.js에 작성하여 index.js가 연결하여 보여줌
 
-### State
+## State
 #### 1. state
- 데이터 저장 방식
- 1. 변수에 저장
- 2. state에 저장
+리액트의 데이터 저장공간
+자주 바뀌는 중요한 데이터는 state에 저장해 자동 렌더링이 이루어지도록 한다.
+
+      데이터 저장 방식
+      1. 변수에 저장
+      2. state에 저장
  
 #### state: 변수 대신 쓰는 데이터 저장공간
 
@@ -79,10 +93,21 @@ index.html에 보여질 html코드를 app.js에 작성하여 index.js가 연결�
 - 자주 바뀌는 중요한 데이터는 state에 저장
 
 #### 3. 데이터 변경
-데이터변경함수를 호출하여 변경
+데이터 변경 함수를 호출하여 변경
 #### state는 일반적인 방법으로 변경 불가 -> 두번째 인자 변경함수 사용
 #### 변경함수를 사용해야 재렌더링이 잘 일어남
 
 ```javascript
 <div onClick={ () => {데이터변경함수( 변경할 데이터 ) } }> react </div>
 ```
+
+#### Array & Object state 데이터 수정
+1. 기존 state의 복사본 생성
+2. 복사본에서 수정사항 반영
+3. 변경함수()에 복사본 데이터 사용
+
+#### ❗리액트 대 원칙
+immutatable: 원본 데이터를 변경하지 않고 복사본을 만들어 변경사항을 적용시킨다.
+
+#### deep copy
+Array, Object는 값 공유(reference data type)가 되기때문에 서로 독립적인 값을 가지도록 복사한다.
