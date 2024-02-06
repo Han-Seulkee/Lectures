@@ -8,5 +8,5 @@ Assignment & Project
   * Challenges
     * [Python Web Scraper](https://github.com/Han-Seulkee/Lectures/tree/main/Python%20Web%20Scraper)
     
-## Online Lectures
+## etc.
   * [React Basic](https://github.com/Han-Seulkee/Lectures/tree/main/React%20Basic)
