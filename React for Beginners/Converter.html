@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<body>
+  <h1>Super Converter</h1>
+  <div id="root"></div>
+</body>
+<script src="https://unpkg.com/react@18.2.0/umd/react.production.min.js"></script>
+<script src="https://unpkg.com/react-dom@18.0.0/umd/react-dom.production.min.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  
+<script type="text/babel">
+  function App () {
+    const [data, setData] = React.useState(0);
+    const onChange = (event) => {
+      setData(event.target.value);
+    };
+    const reset = () => setData(0);
+    //const []
+
+    return (
+      <div>
+        <div>
+          <label htmlFor="minute">Minutes</label>
+          <input value={data} type="number" id="minute" placeholder="Minutes" onChange={onChange} ></input>
+        </div>
+        <div>
+          <label htmlFor="hour">Hours</label>
+          <input value={Math.round(data / 60)} type="number" id="hour" placeholder="Hours" onChange={onChange} disabled></input>
+        </div>
+        <button onClick={reset}>reset</button>
+      </div>
+    );
+  }
+
+  const root = document.getElementById("root");
+  ReactDOM.render(<App />, root);
+</script>
+</html>
