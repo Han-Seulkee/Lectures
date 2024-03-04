@@ -11,23 +11,27 @@
 <script type="text/babel">
   function App () {
     const [data, setData] = React.useState(0);
+    const [flipped, setFlipped] = React.useState(false);
     const onChange = (event) => {
       setData(event.target.value);
     };
     const reset = () => setData(0);
-    //const []
+    const flip = () => { setFlipped((current) => !current);
+
+    };
 
     return (
       <div>
         <div>
           <label htmlFor="minute">Minutes</label>
-          <input value={data} type="number" id="minute" placeholder="Minutes" onChange={onChange} ></input>
+          <input value={data} type="number" id="minute" placeholder="Minutes" onChange={onChange} disabled={flipped}></input>
         </div>
         <div>
           <label htmlFor="hour">Hours</label>
-          <input value={Math.round(data / 60)} type="number" id="hour" placeholder="Hours" onChange={onChange} disabled></input>
+          <input value={Math.round(data / 60)} type="number" id="hour" placeholder="Hours" onChange={onChange} disabled={!flipped}></input>
         </div>
-        <button onClick={reset}>reset</button>
+        <button onClick={reset}>Reset</button>
+        <button onClick={flip}>Flip</button>
       </div>
     );
   }
