@@ -37,7 +37,7 @@ const container = React.createElement("div",null,[btn]);
 ReactDOM.render(container, root);
 ```
 
-##### JSX: almost same as HTML => easy to read & understand  ! but browser can't read jsx
+#### JSX: almost same as HTML => easy to read & understand  ! but browser can't read jsx
 
 ```javascript
 const root = document.getElementById("root");
@@ -62,7 +62,7 @@ ReactDOM.render(<Container />, root);
 
 Babel: javascript compiler. transform jsx into javascript 
 
-#### React Rule
+### React Rule
 First letter of Component SHOULD BE UPPERCASE
 
 ### State
@@ -107,13 +107,13 @@ const changeValue = () => setValue("Done");
 }
 ```
 
-##### Memo
+#### Memo
 announce that don't re-render unchanged props
 ```javascript
 const MemorizedBtn = React.memo(Button);
 ```
 
-##### PropTypes
+#### PropTypes
 Displays a warning when sending the wrong props
 ```javascript
 Button.propTypes = {
@@ -135,3 +135,48 @@ create-react-app can help you to access to the development server & automaticall
 
   npm i prop-types
 ```
+
+### Effects
+#### render/run a part of the code only once
+### 👼
+
+ReactJS refreshes the thing(component, UI) that changed
+
+ `state change` => `re-render` => `all the code will run again`
+
+
+### 🤔🤔🤔
+#### all the code will run again
+1. want to run the code only one time at the start
+2. want to run the code on a specific time
+3. want to run the code on a specific data in a component changes
+
+#### useEffect
+Choose when should the code run
+
+```javascript
+useEffect( , )        //1st: function, 2nd: dependencies(what react should watch to update)
+
+const [keyword, setKeyword] = useState("");
+const [count, setValue] = useState(0);
+
+//1. watch nothing
+useEffect(() => {
+  console.log("this code will run only once at the first time");
+}, []);
+
+//2. watch one item
+useEffect(() => {
+  console.log("this code will run when 'keyword' changes");
+}, [keyword]);
+
+//3. watch two items
+useEffect(() => {
+  console.log("this code will run when 'keyword' & 'count' any of them changes");
+}, [keyword, count]);
+```
+
+#### Cleanup
+allows to do something when the component is being destroyed
+
+define a cleanup funtion inside a effect function
