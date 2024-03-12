@@ -180,3 +180,43 @@ useEffect(() => {
 allows to do something when the component is being destroyed
 
 define a cleanup funtion inside a effect function
+
+### [Make Simple Todo list](https://github.com/Han-Seulkee/Lectures/tree/main/React%20for%20Beginners/Practice/react-todo)
+#### deep copy
+array => reference variable
+```javascript
+const arr = [1,2,3,4];
+const newArr = arr; (X)
+const newArr = [...arr] (O)
+
+...: get array "element"
+```
+
+modifier function has two options
+1. `value` that state data will have
+2. `function` that will put 1st arg of function the `current state`
+```javascript
+const [toDo, setTodo] = useState("");
+
+setTodo("Hello");
+setTodo((currentState) => (currentState + "How are you?"));
+```
+
+#### Using map(function)
+will be run for every item of the array
+```javascript
+const [arr, setArr] = useState([1,2,3,4]);
+
+...
+<ul>
+{arr.map((item, index) => (
+          <li key={index}>{item}</li>
+        ))}
+</ul>
+```
+### Router
+#### Switch Routes
+watch route(url), render component
+#### useParams
+gives us the details of the url
+
